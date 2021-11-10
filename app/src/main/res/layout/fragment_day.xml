@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".model.DayFragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.gymlevon.model.BookViewModel" />
+        <variable
+            name="dayFragment"
+            type="com.example.gymlevon.model.DayFragment" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <RadioGroup
+            android:id="@+id/date_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+            android:id="@+id/option0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@{viewModel.date.equals(viewModel.dateOptions[0])}"
+            android:onClick="@{()-> viewModel.setDate(viewModel.dateOptions[0])}"
+            android:text="@string/Monday"/>
+
+            <RadioButton
+                android:id="@+id/option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.date.equals(viewModel.dateOptions[1])}"
+                android:onClick="@{()-> viewModel.setDate(viewModel.dateOptions[1])}"
+                android:text="@string/teusday"/>
+            <RadioButton
+                android:id="@+id/option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.date.equals(viewModel.dateOptions[2])}"
+                android:onClick="@{()-> viewModel.setDate(viewModel.dateOptions[2])}"
+                android:text="@string/wednesday"/>
+            <RadioButton
+                android:id="@+id/option3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.date.equals(viewModel.dateOptions[3])}"
+                android:onClick="@{()-> viewModel.setDate(viewModel.dateOptions[3])}"
+                android:text="@string/friday"/>
+
+        </RadioGroup>
+        <View
+            android:id="@+id/divider"
+            style="@style/Widget.gym.Divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_options"/>
+        <TextView
+            android:id="@id/subtotal"
+            style="@style/Widget.gym.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{@string/subtotal_price(viewModel.price)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:text="subtotal Ksh 100.00"/>
+        <Button
+            android:id="@+id/cancel_button"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{() -> dayFragment.cancelBooking()}"
+            android:text="@string/cancel"
+            app:layout_constraintEnd_toStartOf="@id/next_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/next_button" />
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/next"
+            android:onClick="@{()-> dayFragment.goNextScreen()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cancel_button"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>

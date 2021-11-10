@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">GymLevon</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="book_session">Book Session</string>
+    <string name="three_days">3 Days Session</string>
+    <string name="six_days">Six Days Session</string>
+    <string name="twelve_days">12 Days Session</string>
+    <string name="title">Gym Levon</string>
+    <string name="aerobic">Aerobic</string>
+    <string name="strength_building">Strenth Building</string>
+    <string name="balance_training">Balance Training</string>
+    <string name="endurance">Endurance</string>
+    <string name="flexibility">Flexibility</string>
+    <string name="moderate_intensity">Moderate Intensity Exercise</string>
+    <string name="vigorous_exercise">Vigorous Exercises</string>
+    <string name="next">Next</string>
+    <string name="cancel">Cancel</string>
+    <string name="Monday">Monday</string>
+    <string name="teusday">Teusday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="friday">Friday</string>
+    <string name="quantity">Quantity</string>
+    <string name="workout">WorkOut</string>
+    <string name="start_date">Start Date</string>
+    <string name="send">Send</string>
+    <string name="subtotal_price">Subtotal %s</string>
+    <string name="total_price">Total %s</string>
+    <string name="strenth_building">Strenth Building</string>
+    <string name="dayfrag">Starting Date</string>
+    <string name="fragsum">Your Summary</string>
+    <string name="sessionfrag">Select Session</string>
+    <string name="workoutfrag">Select WorkOut</string>
+
+</resources>

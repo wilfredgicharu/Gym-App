@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".model.SummaryFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.gymlevon.model.BookViewModel" />
+        <variable
+            name="summaryFragment"
+            type="com.example.gymlevon.model.SummaryFragment" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/quantity_label"
+                style="@style/Widget.gym.TextView.OrderSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quantity"
+                android:textAllCaps="true"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/quantity"
+                style="@style/Widget.gym.TextView.OrderSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{viewModel.quantity.toString()}"
+                tools:text="6 cupcakes" />
+
+            <View
+                android:id="@+id/divider1"
+                style="@style/Widget.gym.Divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/workout_label"
+                style="@style/Widget.gym.TextView.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/workout" />
+
+            <TextView
+                android:id="@+id/workout"
+                style="@style/Widget.gym.TextView.OrderSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{viewModel.workout}"
+                tools:text="Chocolate" />
+
+            <View
+                android:id="@+id/divider2"
+                style="@style/Widget.gym.Divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/pickup_label"
+                style="@style/Widget.gym.TextView.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start_date" />
+
+            <TextView
+                android:id="@+id/date"
+                style="@style/Widget.gym.TextView.OrderSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{viewModel.date}"
+                tools:text="Sunday" />
+
+            <View
+                android:id="@+id/divider3"
+                style="@style/Widget.gym.Divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/total"
+                style="@style/Widget.gym.TextView.FinalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:text="@{@string/total_price(viewModel.price)}"
+                tools:text="Total $5.00" />
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/send_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/send" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="@{() -> summaryFragment.cancelBooking()}"
+            android:text="@string/cancel" />
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".model.SessionFragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.gymlevon.model.BookViewModel" />
+        <variable
+            name="SessionFragment"
+            type="com.example.gymlevon.model.SessionFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:layout_margin="15dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+            />
+           <ImageView
+            android:id="@+id/image"
+            android:layout_width="386dp"
+            android:layout_height="236dp"
+            android:src="@mipmap/ic_gymm"
+            android:layout_margin="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintVertical_bias="0.0" />
+
+          <TextView
+            android:id="@+id/tv_sess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/book_session"
+            android:textSize="33dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image" />
+
+          <Button
+            android:id="@+id/three_days"
+            android:layout_width="match_parent"
+            android:layout_margin="25dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="76dp"
+            android:background="@drawable/button_round"
+            android:text="@string/three_days"
+            android:onClick="@{()-> SessionFragment.bookSession(3)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_sess" />
+          <Button
+            android:id="@+id/six_days"
+            android:background="@drawable/button_round"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/six_days"
+            android:onClick="@{()->SessionFragment.bookSession(6)}"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="25sp"
+            app:layout_constraintTop_toBottomOf="@id/three_days"/>
+
+          <Button
+            android:id="@+id/twelve_days"
+            android:background="@drawable/button_round"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:layout_marginStart="40dp"
+            android:onClick="@{()->SessionFragment.bookSession(12)}"
+            android:layout_marginTop="84dp"
+            android:text="@string/twelve_days"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/six_days" />
+
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/sessionFragment2">
+
+    <fragment
+        android:id="@+id/dayFragment"
+        android:name="com.example.gymlevon.model.DayFragment"
+        android:label="@string/dayfrag"
+        tools:layout="@layout/fragment_day" >
+        <action
+            android:id="@+id/action_dayFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+        <action
+            android:id="@+id/action_dayFragment_to_workoutFragment"
+            app:destination="@id/workoutFragment" />
+        <action
+            android:id="@+id/action_dayFragment_to_sessionFragment2"
+            app:destination="@id/sessionFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.example.gymlevon.model.SummaryFragment"
+        android:label="@string/fragsum"
+        tools:layout="@layout/fragment_summary" >
+        <action
+            android:id="@+id/action_summaryFragment_to_dayFragment"
+            app:destination="@id/dayFragment" />
+        <action
+            android:id="@+id/action_summaryFragment_to_sessionFragment2"
+            app:destination="@id/sessionFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/sessionFragment2"
+        android:name="com.example.gymlevon.model.SessionFragment"
+        android:label="@string/sessionfrag"
+        tools:layout="@layout/fragment_session" >
+        <action
+            android:id="@+id/action_sessionFragment2_to_workoutFragment"
+            app:destination="@id/workoutFragment" />
+    </fragment>
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/workoutFragment3">
+        <fragment
+            android:id="@+id/workoutFragment3"
+            android:name="com.example.gymlevon.model.WorkoutFragment"
+            android:label="@string/workoutfrag"
+            tools:layout="@layout/fragment_workout" />
+    </navigation>
+    <fragment
+        android:id="@+id/workoutFragment"
+        android:name="com.example.gymlevon.model.WorkoutFragment"
+        android:label="@string/workoutfrag"
+        tools:layout="@layout/fragment_workout" >
+        <action
+            android:id="@+id/action_workoutFragment_to_sessionFragment2"
+            app:destination="@id/sessionFragment2" />
+        <action
+            android:id="@+id/action_workoutFragment_to_dayFragment"
+            app:destination="@id/dayFragment" />
+    </fragment>
+</navigation>
