@@ -1,5 +1,5 @@
 # Gym-App
-This app is for booking gym sessions where one can have one or multiple sessions weekly
+This android app (kotlin) is for booking gym sessions where one can have one or multiple sessions weekly
 
 Fragments
 A Fragment represents a reusable portion of your app's UI. A fragment defines and manages its own layout,
